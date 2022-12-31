@@ -5,7 +5,7 @@ function Header() {
     <header>
       <nav className="nav">
         <a href="/" className="site-title">
-          <h1>Color Shopping</h1>
+          <h1>FakeShop</h1>
         </a>
         <ul>
           <li>

@@ -1,11 +1,15 @@
 import React from 'react';
+import heroImage from '../../assets/hero.png';
 
 function Home() {
   return (
-    <>
-      <div>@</div>
-      <div>Home</div>
-    </>
+    <div className="home">
+      <div className="description">
+        <div className="description-smaller">Fake Online Shop</div>
+        Lorem ipsum dolor sit amet, consectetur
+      </div>
+      <img src={heroImage} alt="gradient" className="hero-image" />
+    </div>
   );
 }
 
