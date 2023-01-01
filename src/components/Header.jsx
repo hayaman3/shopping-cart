@@ -9,17 +9,17 @@ function Header() {
         </a>
         <ul>
           <li>
-            <a href="/" className="">
+            <a href="/" className="main-nav">
               Home
             </a>
           </li>
           <li>
-            <a href="/shop" className="">
+            <a href="/shop" className="main-nav">
               Shop
             </a>
           </li>
           <li>
-            <a href="/contact" className="">
+            <a href="/contact" className="main-nav">
               Contact
             </a>
           </li>

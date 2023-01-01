@@ -68,6 +68,7 @@ fieldset {
 body {
   margin: 0;
   font-family: Poppins, sans-serif;
+  min-height: 100vh;
 }
 
 #root {
@@ -101,16 +102,6 @@ header {
   line-height: 1.2;
 }
 
-.nav a {
-  color: white;
-  text-decoration: none;
-  height: 100%;
-}
-
-.nav li.active {}
-
-.nav li.active {}
-
 .nav ul {
   display: flex;
   gap: 3rem;
@@ -120,10 +111,42 @@ header {
   font-size: 1.4rem
 }
 
+.nav a {
+  color: white;
+  text-decoration: none;
+  height: 100%;
+  transition-property: transform;
+}
+
+.main-nav {
+  display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.main-nav::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.main-nav:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
 main {
   background-color: whitesmoke;
-  padding: 2rem;
-  flex: 1
+  padding: 2rem .5rem;
+  flex-grow: 1;
+  /* flex: 1 */
 }
 
 .home {
@@ -148,8 +171,27 @@ main {
 
 .hero-image {
   border-radius: 20px;
-  /* width: 60%; */
-  max-width: 100%;
+  width: 40%;
   height: auto;
   box-shadow: 1px 5px 10px #888888;
+}
+
+
+/* || Footer */
+
+footer {
+  width: 100%;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  gap: 40px;
+  padding: 2%;
+  border-top: grey solid 1px;
+  opacity: .8;
+}
+
+.svg {
+  height: 40px;
+  width: 32px;
 }
