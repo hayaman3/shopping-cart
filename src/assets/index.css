@@ -177,16 +177,95 @@ main {
 }
 
 
+/* || Shop */
+
+.shop {
+  /* display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap; */
+  display: grid;
+  grid-gap: 20px;
+  grid-template-columns: repeat(auto-fill, 200px);
+  justify-content: center;
+  height: 100%;
+}
+
+.product-card {
+  height: 300px;
+  /* width: 200px; */
+  /* background-color: #3da454; */
+  /* background-image: url("./products/product1.png"); */
+  /* flex: 1 0 21%; */
+  /* padding: 15px; */
+  border-radius: 20px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 1px 5px 10px #888888;
+}
+
+.contain {
+  height: 300px;
+  /* z-index: 0; */
+  /* opacity: .1; */
+  object-fit: cover;
+}
+
+.card-header {
+  margin: 15px;
+  display: flex;
+  justify-content: space-between;
+  /* background-color: rgba(255, 255, 255, 0.418);
+  border-radius: 5px;
+  padding: 3px; */
+}
+
+.card-main {
+  margin: 0 15px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-bottom: 8px;
+  gap: 8px;
+}
+
+.card-footer {
+  color: black;
+  background-color: #ffffff;
+  height: 50px;
+  padding: 16px;
+}
+
+
+/* <div className="product-card">
+<div className="card-header">
+  <div className="label">available</div>
+  <div className="label">:action emoji</div>
+</div>
+<div className="card-main">
+  <div className="product-name">Product Name</div>
+  <div className="product-rating">&#9734</div>
+</div>
+<div className="card-footer">
+  <div className="product-price">$$100</div>
+</div>
+</div> */
+
+
+
 /* || Footer */
 
 footer {
+  background-color: whitesmoke;
   width: 100%;
   display: flex;
   align-content: center;
   justify-content: center;
   text-align: center;
   gap: 40px;
-  padding: 2%;
+  padding: 15px;
   border-top: grey solid 1px;
   opacity: .8;
 }
