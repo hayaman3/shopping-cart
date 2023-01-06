@@ -155,14 +155,14 @@ main {
   display: flex;
   justify-content: space-around;
   flex-wrap: wrap-reverse;
-  width: 100%;
+  /* width: 100%; */
 }
 
 .description {
   padding: 1rem;
   font-size: 3rem;
   font-weight: bold;
-  width: 30%;
+  width: clamp(300px, 30%, 500px);
 }
 
 .description-smaller {
@@ -173,8 +173,8 @@ main {
 
 .hero-image {
   border-radius: 20px;
-  width: 40%;
-  height: auto;
+  width: clamp(300px, 45%, 800px);
+  aspect-ratio: 5/4;
   box-shadow: 1px 5px 10px #888888;
 }
 
