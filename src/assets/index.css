@@ -66,6 +66,7 @@ fieldset {
 }
 
 body {
+  padding: 0;
   margin: 0;
   font-family: Poppins, sans-serif;
   min-height: 100vh;
@@ -85,6 +86,12 @@ main {
   flex: 1;
   width: 100%;
   margin: 0 auto;
+  height: 100%;
+  background-image: url(./images/hero.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+
 }
 
 header {
@@ -150,31 +157,55 @@ header {
   transform-origin: bottom left;
 }
 
-
 .home {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-evenly;
   flex-wrap: wrap-reverse;
+  margin: auto;
+
+  height: 100%;
 }
 
 .description {
-  padding: 1rem;
-  font-size: 3rem;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(300px, 40%, 500px);
+  /* border: 2px solid var(--emerald); */
+  /* background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(0.5px);
+  -webkit-backdrop-filter: blur(0.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18); */
+
+}
+
+.description p {
+  font-size: 2.3rem;
   font-weight: bold;
-  width: clamp(300px, 30%, 500px);
 }
 
 .description-smaller {
   font-size: 1.5rem;
   font-weight: bold;
-  color: grey;
+  color: var(--dark)
+}
+
+.description-shop {
+  /* align-self: flex-end; */
+  padding: 10px 30%;
+  border: 2px solid var(--dark);
+  border-radius: 8px;
+  font-weight: bold;
 }
 
 .hero-image {
   border-radius: 20px;
-  width: clamp(300px, 45%, 800px);
-  aspect-ratio: 5/4;
-  box-shadow: 1px 5px 10px #888888;
+  width: clamp(450px, 40%, 800px);
+  height: auto;
+
 }
 
 /* || Shop */
