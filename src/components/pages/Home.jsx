@@ -1,5 +1,4 @@
 import React from 'react';
-// import heroImage from '../../assets/images/hero.png';
 import heroImage from '../../assets/images/midjourney.png';
 
 function Home() {
