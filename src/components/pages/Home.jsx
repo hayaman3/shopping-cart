@@ -7,7 +7,7 @@ function Home() {
       <div className="description">
         <div className="description-smaller">Fake Online Shop</div>
         <p>Lorem ipsum dolor sit amet, consectetur</p>
-        <a href="/shop" className="description-shop">
+        <a href="/shop" className="description-shop-button">
           Shop
         </a>
       </div>

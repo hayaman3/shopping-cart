@@ -1,8 +1,14 @@
 import React from 'react';
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import productList from './utils/productData';
 
 function Shop() {
+  const saveToLocalStorage = (e) => {
+    const key = e.target.closest('.product-card').id;
+    localStorage.setItem(key, key);
+  };
+
   return (
     <div className="shop">
       {productList.map((product) => (
@@ -13,6 +19,7 @@ function Shop() {
             backgroundSize: `cover`,
           }}
           key={product.id}
+          id={product.id}
         >
           <div className="card-header">
             <div className="label">
@@ -52,7 +59,11 @@ function Shop() {
           </div>
           <div className="card-footer">
             <div className="product-price">${product.price}</div>
-            <button type="button" className="add-button">
+            <button
+              type="button"
+              className="add-button"
+              onClick={saveToLocalStorage}
+            >
               Add
             </button>
           </div>

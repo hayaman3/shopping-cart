@@ -1,4 +1,3 @@
-import { v4 as uuidv4 } from 'uuid';
 /* eslint-disable global-require */
 const images = {
   productImagePlaceholder: require('../../../assets/products/product1.png'),
@@ -6,7 +5,7 @@ const images = {
 
 const productList =[
   {
-    id:uuidv4(),
+    id:"product1",
     availability:"Available",
     name:"Fake Product",
     rating:0,
@@ -14,7 +13,7 @@ const productList =[
     img:images.productImagePlaceholder
   },
   {
-    id:uuidv4(),
+    id:"product2",
     availability:"Sale",
     name:"Fake Product",
     rating:5,
@@ -22,7 +21,7 @@ const productList =[
     img:images.productImagePlaceholder
   },
   {
-    id:uuidv4(),
+    id:"product3",
     availability:"Sold Out",
     name:"Fake Product",
     rating:3,
@@ -30,7 +29,7 @@ const productList =[
     img:images.productImagePlaceholder
   },
  {
-    id:uuidv4(),
+    id:"product4",
     availability:"Available",
     name:"Fake Product",
     rating:2,
