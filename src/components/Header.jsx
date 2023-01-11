@@ -1,6 +1,8 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-function Header() {
+// eslint-disable-next-line react/prop-types
+function Header({ cartItemNumber }) {
   return (
     <header>
       <nav className="nav">
@@ -22,6 +24,13 @@ function Header() {
             <a href="/contact" className="main-nav">
               Contact
             </a>
+          </li>
+
+          <li>
+            <button type="button" className="cart-button">
+              <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
+              &nbsp;{cartItemNumber}
+            </button>
           </li>
         </ul>
       </nav>
