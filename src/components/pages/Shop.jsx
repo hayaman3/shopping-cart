@@ -1,14 +1,9 @@
 import React from 'react';
-
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import productList from './utils/productData';
+import productList from '../../utils/productData';
+import { saveToLocalStorage } from '../../utils/helper';
 
 function Shop() {
-  const saveToLocalStorage = (e) => {
-    const key = e.target.closest('.product-card').id;
-    localStorage.setItem(key, key);
-  };
-
   return (
     <div className="shop">
       {productList.map((product) => (

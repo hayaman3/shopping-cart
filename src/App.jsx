@@ -3,14 +3,16 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
+import { localStorageLength } from './utils/helper';
 
 function App() {
-  // const [count, setCount] = useState(0);
-  const [cartItemNumber, setCartItemNumber] = useState(3);
+  const [cartItemCounter, setCartItemCounter] = useState(
+    localStorageLength()
+  );
   return (
     <Router>
-      <Header cartItemNumber={cartItemNumber} />
-      <Main setCartItemNumber={setCartItemNumber} />
+      <Header cartItemCounter={cartItemCounter} />
+      <Main setCartItemCounter={setCartItemCounter} />
       <Footer />
     </Router>
   );

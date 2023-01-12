@@ -1,6 +1,6 @@
 /* eslint-disable global-require */
 const images = {
-  productImagePlaceholder: require('../../../assets/products/product1.png'),
+  productImagePlaceholder: require('../assets/products/product1.png'),
 }
 
 const productList =[

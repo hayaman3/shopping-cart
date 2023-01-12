@@ -151,6 +151,11 @@ header {
   font-size: 1.4rem
 }
 
+.cart-counter {
+  vertical-align: middle;
+  font-size: 1rem;
+}
+
 .main-nav:hover::after {
   transform: scaleX(1);
   transform-origin: bottom left;

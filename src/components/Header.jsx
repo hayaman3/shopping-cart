@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // eslint-disable-next-line react/prop-types
-function Header({ cartItemNumber }) {
+function Header({ cartItemCounter }) {
   return (
     <header>
       <nav className="nav">
@@ -29,7 +29,8 @@ function Header({ cartItemNumber }) {
           <li>
             <button type="button" className="cart-button">
               <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
-              &nbsp;{cartItemNumber}
+              &nbsp;
+              <span className="cart-counter">{cartItemCounter}</span>
             </button>
           </li>
         </ul>
