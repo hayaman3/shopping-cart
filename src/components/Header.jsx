@@ -2,7 +2,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 // eslint-disable-next-line react/prop-types
-function Header({ cartItemCounter }) {
+function Header({ cartItemCounter, setOpenCart }) {
   return (
     <header>
       <nav className="nav">
@@ -27,7 +27,13 @@ function Header({ cartItemCounter }) {
           </li>
 
           <li>
-            <button type="button" className="cart-button">
+            <button
+              type="button"
+              className="cart-button"
+              onClick={() => {
+                setOpenCart(true);
+              }}
+            >
               <FontAwesomeIcon icon="fa-solid fa-cart-shopping" />
               &nbsp;
               <span className="cart-counter">{cartItemCounter}</span>

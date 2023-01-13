@@ -5,11 +5,6 @@ const getLocalStorageItems = () => {
   return localStorageList
 };
 
-const localStorageLength = () => {
-  const length = getLocalStorageItems()
-  return length.length
-}
-
 const saveToLocalStorage = (e) => {
   let products = []
   if(localStorage.getItem(key)!==null){
@@ -20,5 +15,10 @@ const saveToLocalStorage = (e) => {
   products.push(item)
   localStorage.setItem(key, JSON.stringify(products));
 };
+
+const localStorageLength = () => {
+  const length = getLocalStorageItems()
+  return length.length
+}
 
 export { getLocalStorageItems, saveToLocalStorage, localStorageLength}
