@@ -11,16 +11,16 @@ function Shop() {
           className="product-card"
           style={{
             background: `url(${product.img})`,
-            backgroundSize: `cover`,
+            backgroundPosition: `50% 35%`,
+            backgroundRepeat: `no-repeat`,
+            backgroundSize: `30% auto`,
+            backgroundColor: `#e8e6e6`,
+            backgroundBlendMode: `multiply`,
           }}
           key={product.id}
           id={product.id}
         >
           <div className="card-header">
-            <div className="label">
-              <FontAwesomeIcon icon="fa-solid fa-circle-dot" />
-              &nbsp;{product.availability}
-            </div>
             <FontAwesomeIcon
               icon="fa-solid fa-ellipsis-vertical"
               className="card-header-detail"

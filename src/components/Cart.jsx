@@ -1,4 +1,5 @@
 import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import '../assets/cart.css';
 
 // eslint-disable-next-line react/prop-types
@@ -13,7 +14,7 @@ function Modal({ setOpenCart }) {
               setOpenCart(false);
             }}
           >
-            X
+            <FontAwesomeIcon icon="fa-solid fa-circle-xmark" />
           </button>
         </div>
         <div className="title">

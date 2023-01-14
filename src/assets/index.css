@@ -94,7 +94,7 @@ header {
   position: sticky;
   top: 0;
   padding: 1rem;
-  z-index: 100;
+  z-index: 1;
 }
 
 .nav {
@@ -222,7 +222,7 @@ header {
   align-self: center;
   justify-self: center;
   border-radius: 20px;
-  color: white;
+  color: rgb(47, 47, 47);
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -235,15 +235,15 @@ header {
 }
 
 .card-header {
-  font-size: .8rem;
-  margin: 15px;
+  padding: 15px;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .card-header-detail {
-  color: rgb(96, 96, 96);
+  font-size: .8rem;
+  justify-self: right;
 }
 
 .card-main {
@@ -280,8 +280,6 @@ header {
   font-weight: 600;
   padding: 5px 20px;
 }
-
-
 
 /* || Contact */
 
