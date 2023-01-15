@@ -1,9 +1,19 @@
+import {  indexedProductList } from "./productData"
+
 const key = 'uua3NpwFwA';
 
 const getLocalStorageItems = () => {
   const localStorageList = JSON.parse(localStorage.getItem(key))
   return localStorageList
 };
+
+const getCartData = () =>{
+  const savedItems = getLocalStorageItems()
+
+  const cartData = savedItems.map(item => indexedProductList[item]); 
+
+  return cartData
+}
 
 const saveToLocalStorage = (e) => {
   let products = []
@@ -21,4 +31,4 @@ const localStorageLength = () => {
   return length.length
 }
 
-export { getLocalStorageItems, saveToLocalStorage, localStorageLength}
+export { getLocalStorageItems, saveToLocalStorage, localStorageLength, getCartData }

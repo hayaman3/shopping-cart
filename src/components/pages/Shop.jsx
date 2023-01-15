@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import productList from '../../utils/productData';
+import { productList } from '../../utils/productData';
 import { saveToLocalStorage } from '../../utils/helper';
 
 function Shop() {
