@@ -7,11 +7,9 @@ const getLocalStorageItems = () => {
   return localStorageList
 };
 
-const getCartData = () =>{
+const getCartData = () => {
   const savedItems = getLocalStorageItems()
-
   const cartData = savedItems.map(item => indexedProductList[item]); 
-
   return cartData
 }
 

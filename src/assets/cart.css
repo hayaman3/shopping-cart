@@ -1,4 +1,13 @@
-.modalBackground {
+:root {
+  --dark: #013f66;
+  --raisin-black: #262730;
+  --eton-blue: #77BA99;
+  --emerald: #50c878;
+  --red: rgb(247, 51, 90);
+}
+
+.cart-background {
+  font-family: Baskerville, Arial, sans-serif;
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -10,9 +19,14 @@
   align-items: center;
   z-index: 2;
   position: fixed;
+  color: var(--raisin-black);
 }
 
-.modalContainer {
+.cart-background h3 {
+  color: var(--dark);
+}
+
+.shopping-cart {
   width: 500px;
   /* height: 500px; */
   border-radius: 12px;
@@ -21,15 +35,104 @@
   display: flex;
   flex-direction: column;
   padding: 25px;
+  margin-bottom: 5%;
+  gap: 20px;
 }
 
-.modalContainer .title {
+.shopping-cart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.shopping-cart-header button {
+  font-size: 1rem;
+
+}
+
+
+.cart-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-bottom: 20px;
+  border-bottom: #013f66 solid 1px;
+}
+
+.item-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+
+}
+
+
+.item-card img {
+  padding: 35px;
+  width: 100px;
+  background-color: #eeeeee;
+  border-radius: 10px;
+  opacity: .7;
+
+}
+
+.item-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: -1px;
+}
+
+.item-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+.remove-item-button {
+  color: var(--red);
+  font-size: 1rem;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+.total {
+  display: flex;
+  gap: 8px;
+  margin-left: auto;
+}
+
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.footer-buttons button {
+  padding: 8px 20px;
+  border-radius: 5px;
+}
+
+#cancel-button {
+  background-color: var(--red);
+}
+
+#checkout-button {
+  background-color: var(--dark);
+}
+
+/* .modalContainer .title {
   display: inline-block;
   text-align: center;
   margin-top: 10px;
-}
+} */
 
-.titleCloseBtn {
+/* .titleCloseBtn {
   display: flex;
   justify-content: flex-end;
 }
@@ -67,8 +170,14 @@
   border-radius: 8px;
   font-size: 20px;
   cursor: pointer;
-}
+} */
 
-#cancelBtn {
+/* #cancelBtn {
   background-color: crimson;
+} */
+
+.total button {
+  border-radius: 8px;
+  padding: 10px;
+  background-color: green;
 }

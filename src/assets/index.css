@@ -1,13 +1,7 @@
 :root {
-  --white: #F9FBFF;
   --dark: #013f66;
-  --light: #71b0d8;
-  --average: #013f66a4;
-  --graient: linear-gradient(#3da454, #45a45d);
-  /* trials */
   --raisin-black: #262730;
   --eton-blue: #77BA99;
-  --beige: #EFF0D1;
   --emerald: #50c878;
 }
 
