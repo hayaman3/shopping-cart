@@ -30,7 +30,6 @@ function Modal({ setOpenCart }) {
             }}
           >
             <FontAwesomeIcon icon="fa-solid fa-down-left-and-up-right-to-center" />
-            {/* <FontAwesomeIcon icon="fa-solid fa-circle-xmark" /> */}
           </button>
         </div>
         <CartItems cart={cart} setCart={setCart} />

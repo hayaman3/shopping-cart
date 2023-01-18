@@ -3,7 +3,7 @@
   --raisin-black: #262730;
   --eton-blue: #77BA99;
   --emerald: #50c878;
-  --red: rgb(247, 51, 90);
+  --red: #dd001a;
 }
 
 .cart-background {
@@ -27,7 +27,7 @@
 }
 
 .shopping-cart {
-  width: 500px;
+  /* width: 400px; */
   /* height: 500px; */
   border-radius: 12px;
   background-color: white;
@@ -50,7 +50,6 @@
 
 }
 
-
 .cart-items {
   display: flex;
   flex-direction: column;
@@ -62,11 +61,9 @@
 .item-card {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   flex-wrap: wrap;
-
+  gap: 20px;
 }
-
 
 .item-card img {
   padding: 35px;
@@ -74,8 +71,51 @@
   background-color: #eeeeee;
   border-radius: 10px;
   opacity: .7;
-
 }
+
+.item-card>div {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  justify-content: space-between
+}
+
+.img-quantity {
+  align-self: center;
+}
+
+
+
+.name-price {}
+
+.item-quantity {
+  display: flex;
+  gap: 5px;
+  padding: 5px;
+  border: #eeeeee solid .5px;
+  border-radius: 5px;
+  justify-content: space-evenly;
+  font-size: 1rem;
+  flex: 2
+}
+
+.trial {
+  padding-left: 10px;
+  border-left: #013f6662 solid 1px;
+}
+
+.item-quanity-remove {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-evenly
+}
+
+.item-quantity button {
+  font-size: .8rem;
+  border: 1px black solid;
+}
+
 
 .item-name {
   font-size: 1.5rem;
@@ -83,9 +123,12 @@
   letter-spacing: -1px;
 }
 
+
 .item-price {
   font-size: 1.2rem;
   font-weight: bold;
+  margin-left: auto;
+  align-self: flex-end;
 }
 
 .remove-item-button {
