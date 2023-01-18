@@ -13,32 +13,30 @@ function CartItems({ cart, setCart }) {
         <div key={item.id} className="item-card">
           <div className="img-quantity">
             <img src={item.img} alt={item.name} />
-          </div>
-          <div className="name-price">
-            <span className="item-name">{item.name}</span>
-          </div>
-          <div className="trial">
-            <div className="item-quanity-remove">
-              <span className="item-quantity">
-                <button type="button">
-                  <FontAwesomeIcon icon="fa-solid fa-minus" />
-                </button>
-                <span>1</span>
-                <button type="button">
-                  <FontAwesomeIcon icon="fa-solid fa-plus" />
-                </button>
-              </span>
-              <button
-                type="button"
-                // onClick={() => {
-                //   setOpenCart(false);
-                // }}
-                className="remove-item-button"
-              >
-                <FontAwesomeIcon icon="fa-solid fa-circle-xmark" />
+            <span className="item-quantity">
+              <button type="button">
+                <FontAwesomeIcon icon="fa-solid fa-minus" />
               </button>
+              <span>1</span>
+              <button type="button">
+                <FontAwesomeIcon icon="fa-solid fa-plus" />
+              </button>
+            </span>
+          </div>
+          <div className="remove-name-price">
+            <button
+              type="button"
+              // onClick={() => {
+              //   setOpenCart(false);
+              // }}
+              className="remove-item-button"
+            >
+              <FontAwesomeIcon icon="fa-solid fa-xmark" />
+            </button>
+            <div className="name-price">
+              <span className="item-name">{item.name}</span>
+              <span className="item-price">${item.price}.00</span>
             </div>
-            <span className="item-price">${item.price}</span>
           </div>
         </div>
       ))}
