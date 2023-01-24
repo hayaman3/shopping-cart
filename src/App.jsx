@@ -11,7 +11,6 @@ function App() {
     localStorageLength()
   );
   const [openCart, setOpenCart] = useState(false);
-
   return (
     <Router>
       <Header
@@ -20,7 +19,9 @@ function App() {
       />
       <Main setCartItemCounter={setCartItemCounter} />
       <Footer />
-      {openCart && <Cart setOpenCart={setOpenCart} />}
+      {openCart && cartItemCounter !== 0 && (
+        <Cart setOpenCart={setOpenCart} />
+      )}
     </Router>
   );
 }

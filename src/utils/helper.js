@@ -25,8 +25,9 @@ const saveToLocalStorage = (e) => {
 };
 
 const localStorageLength = () => {
-  const length = getLocalStorageItems()
-  return length.length
+  const cart = getLocalStorageItems()
+  if (cart === null) return 0
+  return cart.length
 }
 
 export { getLocalStorageItems, saveToLocalStorage, localStorageLength, getCartData }
