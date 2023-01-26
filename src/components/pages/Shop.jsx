@@ -1,9 +1,18 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { productList } from '../../utils/productData';
-import { saveToLocalStorage } from '../../utils/helper';
+import {
+  saveToLocalStorage,
+  localStorageLength,
+} from '../../utils/helper';
 
-function Shop() {
+// eslint-disable-next-line react/prop-types
+function Shop({ setCartItemCounter }) {
+  const addButton = (e) => {
+    saveToLocalStorage(e);
+    setCartItemCounter(localStorageLength());
+  };
+
   return (
     <div className="shop">
       {productList.map((product) => (
@@ -57,7 +66,8 @@ function Shop() {
             <button
               type="button"
               className="add-button"
-              onClick={saveToLocalStorage}
+              onClick={addButton}
+              value={product.id}
             >
               Add
             </button>

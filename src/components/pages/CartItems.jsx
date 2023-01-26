@@ -8,19 +8,8 @@ function CartItems({ cart, setCart }) {
 
   console.log(setCart, quantiy, setOpenCart);
 
-  //   console.log({
-  //     /* <div>
-  // {data.map((record) => (
-  //   record.list.length > 0
-  //     ? (<YourRenderComponent record={record} key={record.id} />)
-  //     : null
-  // ))}
-  // </div> */
-  //   });
-
   return (
     <div className="cart-items">
-      if({cart}===null)return null
       {cart.map((item) => (
         <div key={item.id} className="item-card">
           <div className="img-quantity">

@@ -13,6 +13,11 @@ const getCartData = () => {
   return cartData
 }
 
+const addQuantity = (id) => {
+  console.log(localStorage)
+  console.log(id)
+}
+
 const saveToLocalStorage = (e) => {
   let products = []
   if(localStorage.getItem(key)!==null){
@@ -22,7 +27,10 @@ const saveToLocalStorage = (e) => {
   const item = e.target.closest('.product-card').id;
   products.push(item)
   localStorage.setItem(key, JSON.stringify(products));
+  addQuantity(e.target.value)
 };
+
+
 
 const localStorageLength = () => {
   const cart = getLocalStorageItems()
