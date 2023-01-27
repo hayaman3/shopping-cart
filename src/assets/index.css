@@ -64,12 +64,14 @@ body {
   margin: 0;
   font-family: Poppins, sans-serif;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 #root {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 main {
@@ -155,6 +157,7 @@ header {
   justify-content: center;
   flex-wrap: wrap;
   align-items: center;
+  gap: 2rem
 }
 
 .description {
@@ -163,6 +166,10 @@ header {
   flex-direction: column;
   align-items: flex-start;
   width: clamp(300px, 40%, 400px);
+  background-image:
+    linear-gradient(to right, rgb(255, 255, 255, 1), rgb(255, 255, 255, .85)),
+    url(./images/welcome.png);
+
 }
 
 .description p {
