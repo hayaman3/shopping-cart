@@ -1,6 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { indexedProductList } from '../../utils/productData';
+import productList from '../../utils/productData';
 import {
   saveToLocalStorage,
   localStorageLength,
@@ -15,7 +15,7 @@ function Shop({ setCartItemCounter }) {
 
   return (
     <div className="shop">
-      {Object.values(indexedProductList).map((product) => (
+      {Object.values(productList).map((product) => (
         <div
           className="product-card"
           style={{

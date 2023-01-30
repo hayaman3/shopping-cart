@@ -22,7 +22,11 @@
 
 // export { getLocalStorageItems, saveToLocalStorage, localStorageLength, getCartData }
 
-import {  indexedProductList } from "./productData"
+import productList  from "./productData"
+
+  // fix later
+  // console.log(localStorageData)
+  console.log(productList)
 
 const getCartData = () => {
   // const savedItems = getLocalStorageItems()
@@ -32,40 +36,57 @@ const getCartData = () => {
 
 const key = 'uua3NpwFwA';
 
-const getLocalStorageData = () => {
-  const localStorageData = JSON.parse(localStorage.getItem(key))
-  // fix later
-  console.log(localStorageData)
-  console.log(indexedProductList)
-  
-  return localStorageData
+const getLocalStorageData = () => JSON.parse(localStorage.getItem(key))
+// return localStorageData
 
-}
+// const getProductDetails = (id) =>{
+//   return  productList[id]
+
+// }
 
 const saveToLocalStorage = (e) => {
   let products = {}
-  products = {"delete":"later"}
   const id = e.target.value
 
-  // fix later commented out for testings
+  // products = {"delete":"later"}// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
 
-  // if(localStorage.getItem(key)!==null){
+  if(localStorage.getItem(key)!==null){
+    const localStorageData = getLocalStorageData()
+
+    if(id in localStorageData){
+      let {quanity} = localStorageData[id]
+      const item = localStorageData[id]
+      quanity += 1
+      item.quanity = quanity
+      const saveThis = {id:item}
+      products = {localStorageData, saveThis}
+      localStorage.setItem(key, JSON.stringify(products));
+    }else{
+      products = {localStorageData, productList[id]}
+      localStorage.setItem(key, JSON.stringify(products));
+    }
+
+    // const list = productList;
+    // const pair = {id: list};
+
+    // products = {...obj, ...pair};
+  }
   //   const localStorageData = getLocalStorageData()
     
-  //   const idExistst = 
-  //   if(){}
-  //   products = {...products, }
-  // }
+  //   // const idExistst = 
+  //   // if(){}
+
+  //   products = {...products, localStorageData}
+  
 
 
-  console.log(id,products)
-
-}
+    // console.log(id,products)
+    // return "a"
+  }
 
 
 // obj = {...obj, ...pair, scalar};
 
-// document.body.innerHTML = JSON.stringify(obj)
 
 // const saveToLocalStorage = (e) => {
 //   let products = []

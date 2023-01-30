@@ -3,7 +3,7 @@ const images = {
   productImagePlaceholder: require('../assets/products/placeHolder.png'),
 }
 
-const indexedProductList ={
+const productList ={
   "product1": {
       "id": "product1",
       "availability": "Available",
@@ -42,4 +42,4 @@ const indexedProductList ={
   }
 }
 
-export default{ indexedProductList };
+export default productList ;
