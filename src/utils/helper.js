@@ -47,45 +47,38 @@ const getLocalStorageData = () => JSON.parse(localStorage.getItem(key))
 const saveToLocalStorage = (e) => {
   let products = {}
   const id = e.target.value
-
-  // products = {"delete":"later"}// aaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-
+  
   if(localStorage.getItem(key)!==null){
     const localStorageData = getLocalStorageData()
+    const item = localStorageData[id]
 
     if(id in localStorageData){
       let {quanity} = localStorageData[id]
-      const item = localStorageData[id]
       quanity += 1
       item.quanity = quanity
-      const saveThis = {id:item}
-      products = {localStorageData, saveThis}
+
+      const saveItem = {id:item}
+      products = {localStorageData, saveItem}
       localStorage.setItem(key, JSON.stringify(products));
     }else{
-      products = {localStorageData, productList[id]}
+      const saveItem = {id:item}
+      products = {localStorageData, saveItem}
       localStorage.setItem(key, JSON.stringify(products));
     }
-
-    // const list = productList;
-    // const pair = {id: list};
-
-    // products = {...obj, ...pair};
+  }else{
+    const item = productList[id]
+    products[id] = item
+    localStorage.setItem(key, JSON.stringify(products));
   }
+
   //   const localStorageData = getLocalStorageData()
     
   //   // const idExistst = 
   //   // if(){}
 
   //   products = {...products, localStorageData}
-  
 
-
-    // console.log(id,products)
-    // return "a"
   }
-
-
-// obj = {...obj, ...pair, scalar};
 
 
 // const saveToLocalStorage = (e) => {
@@ -101,10 +94,21 @@ const saveToLocalStorage = (e) => {
 // };
 
 
-const localStorageLength = () => {
+const quanityOfItems = () => {
   const cart = getLocalStorageData()
+  console.log(cart)
   if (cart === null) return 0
-  return cart.length
+
+  let total = 0
+  const keys = Object.keys(cart);
+  const values = Object.values(cart);
+  for (let i = 0; i < keys.length; i += 1) {
+      const {quanity} = values[i]
+      total += quanity
+  }
+  console.log(total,"asda")
+  return total 
+  
 }
 
-export { getLocalStorageData, saveToLocalStorage, localStorageLength, getCartData }
+export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData }

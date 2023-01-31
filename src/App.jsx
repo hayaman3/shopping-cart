@@ -4,11 +4,11 @@ import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
 import Cart from './components/Cart';
-import { localStorageLength } from './utils/helper';
+import { quanityOfItems } from './utils/helper';
 
 function App() {
   const [cartItemCounter, setCartItemCounter] = useState(
-    localStorageLength()
+    quanityOfItems()
   );
   const [openCart, setOpenCart] = useState(false);
   return (

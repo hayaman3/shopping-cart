@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import productList from '../../utils/productData';
 import {
   saveToLocalStorage,
-  localStorageLength,
+  quanityOfItems,
 } from '../../utils/helper';
 
 // eslint-disable-next-line react/prop-types
 function Shop({ setCartItemCounter }) {
   const addButton = (e) => {
     saveToLocalStorage(e);
-    setCartItemCounter(localStorageLength());
+    setCartItemCounter(quanityOfItems());
   };
 
   return (
