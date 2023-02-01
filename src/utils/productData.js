@@ -11,7 +11,7 @@ const productList ={
       "rating": 0,
       "price": 100,
       "img": images.productImagePlaceholder,
-      "quantity":0
+      "quantity":1
   },
   "product2": {
       "id": "product2",
@@ -20,7 +20,7 @@ const productList ={
       "rating": 5,
       "price": 90,
       "img": images.productImagePlaceholder,
-      "quantity":0
+      "quantity":1
   },
   "product3": {
       "id": "product3",
@@ -29,7 +29,7 @@ const productList ={
       "rating": 3,
       "price": 110,
       "img": images.productImagePlaceholder,
-      "quantity":0
+      "quantity":1
   },
   "product4": {
       "id": "product4",
@@ -38,7 +38,7 @@ const productList ={
       "rating": 2,
       "price": 20,
       "img": images.productImagePlaceholder,
-      "quantity":0
+      "quantity":1
   }
 }
 
