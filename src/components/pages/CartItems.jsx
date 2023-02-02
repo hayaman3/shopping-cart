@@ -1,12 +1,29 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { getCartData, updateQuanity } from '../../utils/helper';
 
-function CartItems({ cart, setCart }) {
+function CartItems(setOpenCart) {
+  const [cart, setCart] = useState(getCartData());
+  // const [setOpenCart, setOpenCart] = useState(false);
   // const [cartItemCounter, setCartItemCounter] = useState();
-  const [quantiy, setOpenCart] = useState(false);
 
-  console.log(setCart, quantiy, setOpenCart);
+  console.log(cart);
+  console.log(setCart);
+  console.log(setOpenCart);
+  console.log(updateQuanity);
+
+  // const tri = 'tri';
+
+  const adjustCount = (amount, itemId, itemQuantity) => {
+    // setCart((curr) => {
+    //   console.log(curr.id + tri);
+    //   // return curr.id + tri;
+    // });
+    setCart(getCartData());
+    updateQuanity();
+    console.log(amount, itemId, itemQuantity);
+  };
 
   return (
     <div className="cart-items">
@@ -16,11 +33,21 @@ function CartItems({ cart, setCart }) {
             <img src={item.img} alt={item.name} />
             <span className="item-quantity">
               <button type="button">
-                <FontAwesomeIcon icon="fa-solid fa-minus" />
+                <FontAwesomeIcon
+                  icon="fa-solid fa-minus"
+                  onClick={() => {
+                    adjustCount(-1, item.id, item.quantity);
+                  }}
+                />
               </button>
-              <span>1</span>
+              <span>{item.quantity}</span>
               <button type="button">
-                <FontAwesomeIcon icon="fa-solid fa-plus" />
+                <FontAwesomeIcon
+                  icon="fa-solid fa-plus"
+                  onClick={() => {
+                    adjustCount(+1, item.id, item.quantity);
+                  }}
+                />
               </button>
             </span>
           </div>

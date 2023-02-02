@@ -5,9 +5,9 @@ import productList  from "./productData"
   const getLocalStorageData = () => JSON.parse(localStorage.getItem(key))
   
   const getCartData = () => {
-    // const savedItems = getLocalStorageItems()
-    // const cartData = savedItems.map(item => indexedProductList[item]); 
-    // return cartData
+    const savedItems = getLocalStorageData()
+    const cartData = Object.values(savedItems); 
+    return cartData
   }
 
 const saveToLocalStorage = (e) => {
@@ -36,9 +36,7 @@ const saveToLocalStorage = (e) => {
     products[itemIdClicked] = item
     localStorage.setItem(key, JSON.stringify(products));
   }
-
 }
-
 
 const quanityOfItems = () => {
   const cart = getLocalStorageData()
@@ -52,7 +50,10 @@ const quanityOfItems = () => {
       total += values[i].quantity
   }
   return total 
-  
 }
 
-export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData }
+const updateQuanity = () => {
+
+}
+
+export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData ,updateQuanity }
