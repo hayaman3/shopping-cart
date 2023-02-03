@@ -1,14 +1,29 @@
 import productList  from "./productData"
   
-  const key = 'uua3NpwFwA';
+const key = 'uua3NpwFwA';
 
-  const getLocalStorageData = () => JSON.parse(localStorage.getItem(key))
-  
-  const getCartData = () => {
-    const savedItems = getLocalStorageData()
-    const cartData = Object.values(savedItems); 
-    return cartData
-  }
+const getLocalStorageData = () => JSON.parse(localStorage.getItem(key))
+
+const getTotal = () => {
+  const localStorageData = getLocalStorageData()
+  const arrayData = Object.values(localStorageData); 
+  const total = arrayData.reduce((accumulator,obj)=>accumulator + (obj.quantity * obj.price),0)
+  return total
+}
+
+const getCartData = () => {
+  const localStorageData = getLocalStorageData()
+  const cartData = Object.values(localStorageData); 
+  return cartData
+}
+
+const updateQuanity = (amount, itemId) => {
+  const localStorageData = getLocalStorageData()  
+  const localStorageItem = localStorageData[itemId]
+  const {quantity} = localStorageItem
+  localStorageItem.quantity = quantity + amount
+  localStorage.setItem(key, JSON.stringify(localStorageData));
+}
 
 const saveToLocalStorage = (e) => {
   let products = {}
@@ -19,18 +34,13 @@ const saveToLocalStorage = (e) => {
     const localStorageData = getLocalStorageData()
 
     // add quantity if item already exists in cart
-    if(itemIdClicked in localStorageData){
-      const localStorageItem = localStorageData[itemIdClicked]
-      const {quantity} = localStorageItem
-      localStorageItem.quantity = quantity + 1
-      localStorage.setItem(key, JSON.stringify(localStorageData));
-    }else{
+    if(itemIdClicked in localStorageData) updateQuanity(1, itemIdClicked)
+    else {
       const dataBaseItem = productList[itemIdClicked]
       const newItem = {[itemIdClicked]:dataBaseItem}
       products = {...localStorageData, ...newItem}
       localStorage.setItem(key, JSON.stringify(products));
     }
-    
   }else{
     const item = productList[itemIdClicked]
     products[itemIdClicked] = item
@@ -39,21 +49,17 @@ const saveToLocalStorage = (e) => {
 }
 
 const quanityOfItems = () => {
-  const cart = getLocalStorageData()
+  const localStorageData = getLocalStorageData()
 
-  if (cart === null) return 0
+  if (localStorageData === null) return 0
 
   let total = 0
-  const keys = Object.keys(cart);
-  const values = Object.values(cart);
+  const keys = Object.keys(localStorageData);
+  const values = Object.values(localStorageData);
   for (let i = 0; i < keys.length; i += 1) {
       total += values[i].quantity
   }
   return total 
 }
 
-const updateQuanity = () => {
-
-}
-
-export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData ,updateQuanity }
+export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData, updateQuanity, getTotal }

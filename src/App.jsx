@@ -20,7 +20,11 @@ function App() {
       <Main setCartItemCounter={setCartItemCounter} />
       <Footer />
       {openCart && cartItemCounter !== 0 && (
-        <Cart setOpenCart={setOpenCart} />
+        <Cart
+          setOpenCart={setOpenCart}
+          setCartItemCounter={setCartItemCounter}
+          cartItemCounter={cartItemCounter}
+        />
       )}
     </Router>
   );

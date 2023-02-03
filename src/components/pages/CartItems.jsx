@@ -1,28 +1,22 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { getCartData, updateQuanity } from '../../utils/helper';
+import {
+  getCartData,
+  quanityOfItems,
+  updateQuanity,
+  getTotal,
+} from '../../utils/helper';
 
-function CartItems(setOpenCart) {
+function CartItems({ setCartItemCounter, setTotal }) {
   const [cart, setCart] = useState(getCartData());
-  // const [setOpenCart, setOpenCart] = useState(false);
-  // const [cartItemCounter, setCartItemCounter] = useState();
-
-  console.log(cart);
-  console.log(setCart);
-  console.log(setOpenCart);
-  console.log(updateQuanity);
-
-  // const tri = 'tri';
 
   const adjustCount = (amount, itemId, itemQuantity) => {
-    // setCart((curr) => {
-    //   console.log(curr.id + tri);
-    //   // return curr.id + tri;
-    // });
+    if (itemQuantity === 1 && amount === -1) return;
+    updateQuanity(amount, itemId);
+    setTotal(getTotal());
     setCart(getCartData());
-    updateQuanity();
-    console.log(amount, itemId, itemQuantity);
+    setCartItemCounter(quanityOfItems());
   };
 
   return (
@@ -54,9 +48,9 @@ function CartItems(setOpenCart) {
           <div className="remove-name-price">
             <button
               type="button"
-              // onClick={() => {
-              //   setOpenCart(false);
-              // }}
+              onClick={() => {
+                // setOpenCart(false);
+              }}
               className="remove-item-button"
             >
               <FontAwesomeIcon icon="fa-solid fa-xmark" />
