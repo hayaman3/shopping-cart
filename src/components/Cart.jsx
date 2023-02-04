@@ -8,7 +8,7 @@ import '../assets/cart.css';
 
 // eslint-disable-next-line react/prop-types
 function Modal({ setOpenCart, setCartItemCounter, cartItemCounter }) {
-  const [total, setTotal] = useState(getTotal());
+  const [total, setTotal] = useState(() => getTotal());
 
   return (
     <div

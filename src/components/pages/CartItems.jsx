@@ -6,14 +6,22 @@ import {
   quanityOfItems,
   updateQuanity,
   getTotal,
+  removeItem,
 } from '../../utils/helper';
 
 function CartItems({ setCartItemCounter, setTotal }) {
-  const [cart, setCart] = useState(getCartData());
+  const [cart, setCart] = useState(() => getCartData());
 
   const adjustCount = (amount, itemId, itemQuantity) => {
     if (itemQuantity === 1 && amount === -1) return;
     updateQuanity(amount, itemId);
+    setTotal(getTotal());
+    setCart(getCartData());
+    setCartItemCounter(quanityOfItems());
+  };
+
+  const updateRemovedItem = (ItemId) => {
+    removeItem(ItemId);
     setTotal(getTotal());
     setCart(getCartData());
     setCartItemCounter(quanityOfItems());
@@ -49,7 +57,7 @@ function CartItems({ setCartItemCounter, setTotal }) {
             <button
               type="button"
               onClick={() => {
-                // setOpenCart(false);
+                updateRemovedItem(item.id);
               }}
               className="remove-item-button"
             >

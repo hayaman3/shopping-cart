@@ -25,6 +25,12 @@ const updateQuanity = (amount, itemId) => {
   localStorage.setItem(key, JSON.stringify(localStorageData));
 }
 
+const removeItem = (itemId) =>{
+  const localStorageData = getLocalStorageData()
+  delete localStorageData[itemId]
+  localStorage.setItem(key, JSON.stringify(localStorageData));
+}
+
 const saveToLocalStorage = (e) => {
   let products = {}
   const itemIdClicked = e.target.value
@@ -62,4 +68,4 @@ const quanityOfItems = () => {
   return total 
 }
 
-export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData, updateQuanity, getTotal }
+export { getLocalStorageData, saveToLocalStorage, quanityOfItems, getCartData, updateQuanity, getTotal, removeItem }

@@ -7,7 +7,7 @@ import Cart from './components/Cart';
 import { quanityOfItems } from './utils/helper';
 
 function App() {
-  const [cartItemCounter, setCartItemCounter] = useState(
+  const [cartItemCounter, setCartItemCounter] = useState(() =>
     quanityOfItems()
   );
   const [openCart, setOpenCart] = useState(false);
