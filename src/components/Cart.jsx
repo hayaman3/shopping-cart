@@ -40,8 +40,10 @@ function Modal({ setOpenCart, setCartItemCounter, cartItemCounter }) {
 
         <div className="footer">
           <div className="total">
-            <div>{cartItemCounter}items</div>
-            <div className="item-price">${total}.00</div>
+            <div className="total-quantity">
+              {cartItemCounter} items
+            </div>
+            <div className="total-price">${total}.00</div>
           </div>
           <div className="footer-buttons">
             <button

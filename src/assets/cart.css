@@ -35,7 +35,9 @@
   flex-direction: column;
   padding: 25px;
   margin-bottom: 5%;
-  gap: 20px;
+  gap: 18px;
+  max-height: calc(100vh - 210px);
+  overflow-y: auto;
 }
 
 .shopping-cart-header {
@@ -140,7 +142,7 @@
 .footer {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 18px;
   padding: 0 5px;
 }
 
@@ -148,6 +150,16 @@
   display: flex;
   gap: 8px;
   margin-left: auto;
+  align-items: flex-end;
+}
+
+.total-quantity {
+  font-size: .9rem;
+}
+
+.total-price {
+  font-size: 1.2rem;
+  font-weight: bold;
 }
 
 .footer-buttons {
