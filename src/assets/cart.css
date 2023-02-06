@@ -1,8 +1,6 @@
 :root {
   --dark: #013f66;
   --raisin-black: #262730;
-  --eton-blue: #77BA99;
-  --emerald: #50c878;
   --red: #dd001a94;
 }
 
@@ -34,7 +32,6 @@
   display: flex;
   flex-direction: column;
   padding: 25px;
-  margin-bottom: 5%;
   gap: 18px;
   max-height: calc(100vh - 210px);
   overflow-y: auto;
@@ -53,7 +50,7 @@
 .cart-items {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 18px;
   padding-bottom: 20px;
   border-bottom: #013f66 solid 1px;
 }
@@ -61,11 +58,11 @@
 .item-card {
   display: flex;
   justify-content: space-between;
-  gap: 8px;
-  padding: 10px 10px 15px 15px;
+  gap: 18px;
+  padding: 18px;
   border-radius: 10px;
-  border: solid .5px rgb(240, 240, 240);
-
+  border: solid 1px rgb(228, 228, 228);
+  box-shadow: rgba(142, 142, 142, 0.35) 0px 0px 5px;
 }
 
 .item-card img {
@@ -74,12 +71,13 @@
   background-color: #f0f0f0a9;
   border-radius: 15px;
   opacity: .7;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 3px;
 }
 
 .img-quantity {
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 18px;
   align-items: center;
   justify-content: center;
 }
@@ -88,7 +86,6 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  /* justify-content: space-around; */
 }
 
 .item-quantity {
@@ -99,6 +96,7 @@
   overflow: hidden;
   border-radius: 5px;
   background-color: #eeeeee7c;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 0px 1px;
 }
 
 .item-quantity span {
@@ -135,6 +133,8 @@
 
 .remove-item-button {
   margin-left: auto;
+  margin-right: -5px;
+  margin-top: -10px;
   color: var(--red);
   font-size: 1rem;
 }
