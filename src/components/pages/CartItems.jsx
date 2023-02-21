@@ -34,7 +34,7 @@ function CartItems({ setCartItemCounter, setTotal }) {
           <div className="img-quantity">
             <img src={item.img} alt={item.name} />
             <span className="item-quantity">
-              <button type="button">
+              <button type="button" className="decrease-quantity">
                 <FontAwesomeIcon
                   icon="fa-solid fa-minus"
                   onClick={() => {
@@ -43,7 +43,7 @@ function CartItems({ setCartItemCounter, setTotal }) {
                 />
               </button>
               <span>{item.quantity}</span>
-              <button type="button">
+              <button type="button" className="add-quantity">
                 <FontAwesomeIcon
                   icon="fa-solid fa-plus"
                   onClick={() => {
