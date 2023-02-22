@@ -169,7 +169,6 @@ header {
   background-image:
     linear-gradient(to right, rgb(255, 255, 255, 1), rgb(255, 255, 255, .85)),
     url(./images/welcome.png);
-
 }
 
 .description p {
