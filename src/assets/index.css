@@ -94,13 +94,12 @@ header {
   justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .site-title h1 {
   color: var(--emerald);
   font-size: 3rem;
-  line-height: 1.2;
 }
 
 .nav ul {
@@ -184,7 +183,7 @@ header {
 
 .description-shop-button {
   margin-top: 1vh;
-  padding: 8px 32px;
+  padding: .5rem 2rem;
   border-radius: 5px;
   font-weight: bold;
   font-size: 1.6rem;
@@ -229,7 +228,7 @@ header {
 }
 
 .card-header {
-  padding: 15px;
+  padding: 1rem;
   display: flex;
   justify-content: flex-end;
 }
@@ -240,12 +239,12 @@ header {
 }
 
 .card-main {
-  margin: 0 15px;
+  margin: 0 1rem;
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  padding-bottom: 8px;
+  padding-bottom: .5rem;
   gap: 8px;
 }
 
@@ -316,7 +315,7 @@ textarea {
 }
 
 input {
-  padding: 4px;
+  padding: .3rem;
   color: var(--dark);
   background-color: white;
   border: 1px solid var(--dark);
@@ -328,15 +327,15 @@ footer {
   display: flex;
   justify-content: center;
   text-align: center;
-  gap: 40px;
-  padding: 15px;
-  border-top: grey solid 1px;
+  gap: 2.5rem;
+  padding: 1rem;
+  border-top: rgba(128, 128, 128, 0.521) solid 1px;
   opacity: .8;
 }
 
 .svg {
-  height: 40px;
-  width: 32px;
+  height: 1.5rem;
+  width: 1.3rem;
 }
 
 .white {
